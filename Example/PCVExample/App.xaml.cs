@@ -1,5 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PCVExample
 {
 	public partial class App : Application
@@ -7,6 +10,7 @@ namespace PCVExample
 		public App()
 		{
 			InitializeComponent();
+
 
 			MainPage = new PCVExamplePage();
 		}

@@ -14,6 +14,10 @@ namespace PCVExample.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 
+
+			Plugin.PCV.iOS.PageContainerViewRenderer.Init();
+
+
 			// Code for starting up the Xamarin Test Cloud Agent
 #if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
