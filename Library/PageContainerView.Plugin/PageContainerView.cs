@@ -3,6 +3,9 @@ using Xamarin.Forms;
 
 namespace Plugin.PCV
 {
+	/// <summary>
+	/// A View that contains a Page
+	/// </summary>
 	public class PageContainerView : View
 	{
 		public PageContainerView() { }

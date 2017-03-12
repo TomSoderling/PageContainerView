@@ -35,14 +35,18 @@ namespace PCVExample
 
 			button.Clicked += (sender, e) =>
 			{
-				// TODO: give child pages random colors
-				var nextChildPage = BuildChildPage(parent, childNumber + 1, Color.Yellow);
-
 				// use the correct navigation page
 				if (parent == "A")
+				{
+					// TODO: give child pages random colors
+					var nextChildPage = BuildChildPage(parent, childNumber + 1, Color.Pink);
 					navPageA.PushAsync(nextChildPage);
+				}
 				else if (parent == "B")
+				{
+					var nextChildPage = BuildChildPage(parent, childNumber + 1, Color.Yellow);
 					navPageB.PushAsync(nextChildPage);
+				}
 			};
 
 			var childPage = new ContentPage
