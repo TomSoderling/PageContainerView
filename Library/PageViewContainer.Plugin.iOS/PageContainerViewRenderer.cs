@@ -12,14 +12,9 @@ namespace Plugin.PCV.iOS
 	{
 		public PageContainerViewRenderer() { }
 
-		/// <summary>
-		/// This method needs to be called from the ExampleApp.iOS AppDelegate so this class doesn't get linked out
-		/// This is needed since the renderer exists in a different namespace than the application
-		/// </summary>
-		public new static void Init()
-		{
-			var temp = DateTime.Now;
-		}
+		// This method needs to be called from the ExampleApp.iOS AppDelegate so this class doesn't get linked out
+		// https://forums.xamarin.com/discussion/comment/198852/#Comment_198852
+		public new static void Init() { }
 
 		protected override void OnElementChanged(ElementChangedEventArgs<PageContainerView> e)
 		{

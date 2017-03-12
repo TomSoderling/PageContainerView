@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace PCVExample
 {
@@ -24,7 +25,7 @@ namespace PCVExample
 
 
 			// set the content property of the PageContainer to display Nav Page A first
-			pageContainerView.Content = navPageB;
+			pageContainerView.Content = navPageA;
 		}
 
 
@@ -35,18 +36,13 @@ namespace PCVExample
 
 			button.Clicked += (sender, e) =>
 			{
+				var nextChildPage = BuildChildPage(parent, childNumber + 1, GetRandomColor());
+
 				// use the correct navigation page
 				if (parent == "A")
-				{
-					// TODO: give child pages random colors
-					var nextChildPage = BuildChildPage(parent, childNumber + 1, Color.Pink);
 					navPageA.PushAsync(nextChildPage);
-				}
 				else if (parent == "B")
-				{
-					var nextChildPage = BuildChildPage(parent, childNumber + 1, Color.Yellow);
 					navPageB.PushAsync(nextChildPage);
-				}
 			};
 
 			var childPage = new ContentPage
@@ -60,6 +56,12 @@ namespace PCVExample
 			};
 
 			return childPage;
+		}
+
+		Color GetRandomColor()
+		{
+			var rand = new Random();
+			return Color.FromRgb(rand.Next(0, 255), rand.Next(0, 255), rand.Next(0, 255));
 		}
 	}
 }
