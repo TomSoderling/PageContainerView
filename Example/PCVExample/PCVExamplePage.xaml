@@ -5,10 +5,9 @@
 	xmlns:pcv="clr-namespace:Plugin.PCV;assembly=PageContainerView.Plugin" 
 	x:Class="PCVExample.PCVExamplePage">
 
-	<StackLayout x:Name="stack" Orientation="Horizontal" Spacing="0">
+	<StackLayout x:Name="mainStack" Orientation="Horizontal" Spacing="0">
 
-		<!-- this 64px margin is a hack for now, it will only work on iOS devices in portrait mode -->
-		<StackLayout Orientation="Vertical" WidthRequest="100" Spacing="0" Margin="0, 64, 0, 0">
+		<StackLayout x:Name="tabStack" Orientation="Vertical" WidthRequest="100" Spacing="0">
 			<BoxView x:Name="tabA" HeightRequest="100" BackgroundColor="Lime">
 				<BoxView.GestureRecognizers>
         			<TapGestureRecognizer Tapped="OnTabATapGestureRecognizerTapped" />
