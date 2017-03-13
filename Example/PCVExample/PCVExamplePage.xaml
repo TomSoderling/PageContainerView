@@ -5,10 +5,27 @@
 	xmlns:pcv="clr-namespace:Plugin.PCV;assembly=PageContainerView.Plugin" 
 	x:Class="PCVExample.PCVExamplePage">
 
-	<StackLayout x:Name="stack" Orientation="Horizontal">
-		<Label 
-			Text="left area" 
-			VerticalTextAlignment="Center" />
+	<StackLayout x:Name="stack" Orientation="Horizontal" Spacing="0">
+
+		<StackLayout Orientation="Vertical" WidthRequest="100" Spacing="0" Margin="0, 64, 0, 0">
+			<BoxView x:Name="tabA" HeightRequest="100" BackgroundColor="Lime">
+				<BoxView.GestureRecognizers>
+        			<TapGestureRecognizer Tapped="OnTabATapGestureRecognizerTapped" />
+			  	</BoxView.GestureRecognizers>
+			</BoxView>
+
+			<BoxView x:Name="tabB" HeightRequest="100" BackgroundColor="Yellow">
+				<BoxView.GestureRecognizers>
+        			<TapGestureRecognizer Tapped="OnTabBTapGestureRecognizerTapped" />
+			  	</BoxView.GestureRecognizers>
+			</BoxView>
+
+			<BoxView x:Name="tabC" HeightRequest="100" BackgroundColor="Pink">
+				<BoxView.GestureRecognizers>
+        			<TapGestureRecognizer Tapped="OnTabCTapGestureRecognizerTapped" />
+			  	</BoxView.GestureRecognizers>
+			</BoxView>
+		</StackLayout>
 		
 		<pcv:PageContainerView 
 			x:Name="pageContainerView"
