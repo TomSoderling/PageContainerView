@@ -18,13 +18,13 @@ namespace PCVExample
 
 		public void CreateNavPages()
 		{
-			var a1 = BuildChildPage("A", 1, Color.Lime);
+			var a1 = BuildDynamicChildPage("A", 1, Color.Lime);
 			navPageA = new NavigationPage(a1); //{ Title = "Nav Page A" }; // this Title doesn't seem to get displayed anywhere
 
-			var b1 = BuildChildPage("B", 1, Color.Yellow);
+			var b1 = BuildDynamicChildPage("B", 1, Color.Yellow);
 			navPageB = new NavigationPage(b1);
 
-			var c1 = BuildChildPage("C", 1, Color.Pink);
+			var c1 = BuildDynamicChildPage("C", 1, Color.Pink);
 			navPageC = new NavigationPage(c1);
 
 
@@ -33,14 +33,24 @@ namespace PCVExample
 		}
 
 
-		private ContentPage BuildChildPage(string parent, int childNumber, Color background)
+		private ContentPage BuildDynamicChildPage(string parent, int childNumber, Color background)
 		{
-			var label = new Label { Text = $"Child Page {parent.ToLower()}.{childNumber}" };
-			var button = new Button { Text = "Push next ContentPage", HorizontalOptions = LayoutOptions.Start };
+			var label = new Label 
+			{ 
+				Text = $"Child Page {parent.ToLower()}.{childNumber}", 
+				Margin = new Thickness(15, 15, 0, 0) 
+			};
+
+			var button = new Button 
+			{ 
+				Text = "Push next child ContentPage", 
+				HorizontalOptions = LayoutOptions.Start, 
+				Margin = new Thickness(15, 0, 0, 0) 
+			};
 
 			button.Clicked += (sender, e) =>
 			{
-				var nextChildPage = BuildChildPage(parent, childNumber + 1, GetRandomColor());
+				var nextChildPage = BuildDynamicChildPage(parent, childNumber + 1, GetRandomColor());
 
 				// use the correct navigation page
 				switch (parent)
