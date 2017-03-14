@@ -52,7 +52,7 @@ namespace Plugin.PCV.iOS
 				var parentPageRenderer = Platform.GetRenderer(parentPage);
 
 				Control.ParentViewController = parentPageRenderer.ViewController;
-				Control.ViewController = viewController;
+				Control.ViewController = viewController; // some logic happens here when this gets set
 			}
 			else
 			{
@@ -66,19 +66,22 @@ namespace Plugin.PCV.iOS
 		public override void LayoutSubviews()
 		{
 			base.LayoutSubviews();
+
 			var page = Element != null ? Element.Content : null;
 			if (page != null)
-			{
 				page.Layout(new Rectangle(0, 0, Bounds.Width, Bounds.Height));
-			}
 		}
 
 		protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			base.OnElementPropertyChanged(sender, e);
+
 			if (e.PropertyName == "Content" || e.PropertyName == "Renderer")
 			{
-				Device.BeginInvokeOnMainThread(() => ChangePage(Element != null ? Element.Content : null));
+				if (Element?.Content != null) // don't attempt to change the page if the PCV.Content property doesn't have a page to display
+				{
+					Device.BeginInvokeOnMainThread(() => ChangePage(Element != null ? Element.Content : null));
+				}
 			}
 		}
 

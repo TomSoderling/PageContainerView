@@ -14,16 +14,11 @@ namespace Plugin.PCV.iOS
 			BackgroundColor = Color.Transparent.ToUIColor();
 		}
 
-		public UIViewController ParentViewController
-		{
-			get;
-			set;
-		}
-
 		#region properties
 
-		UIViewController _viewController;
+		public UIViewController ParentViewController { get; set; }
 
+		private UIViewController _viewController;
 		public UIViewController ViewController
 		{
 			get { return _viewController; }
@@ -42,19 +37,33 @@ namespace Plugin.PCV.iOS
 			}
 		}
 
-		void AddViewController()
+		private void AddViewController()
 		{
 			if (ParentViewController == null)
 				throw new Exception("No Parent ViewController was found");
 
 			Debug.WriteLine($"vc.v is: {_viewController.View}");
 
-			ParentViewController.AddChildViewController(_viewController);
-			AddSubview(_viewController.View);
+
+			// This is the new ViewController of the new Page to be displayed - give it a parent.
+			ParentViewController.AddChildViewController(_viewController); 
+
+			// add this new View as a nested view of this current UIVew
+			AddSubview(_viewController.View); 
 
 			_viewController.View.Frame = Bounds;
 			_viewController.DidMoveToParentViewController(ParentViewController);
 
+		}
+
+		private void RemoveCurrentViewController()
+		{
+			if (ViewController != null)
+			{
+				ViewController.WillMoveToParentViewController(null);
+				ViewController.View.RemoveFromSuperview();
+				ViewController.RemoveFromParentViewController();
+			}
 		}
 
 		#endregion
@@ -78,18 +87,5 @@ namespace Plugin.PCV.iOS
 
 		#endregion
 
-		#region private impl
-
-		void RemoveCurrentViewController()
-		{
-			if (ViewController != null)
-			{
-				ViewController.WillMoveToParentViewController(null);
-				ViewController.View.RemoveFromSuperview();
-				ViewController.RemoveFromParentViewController();
-			}
-		}
-
-		#endregion
 	}
 }
