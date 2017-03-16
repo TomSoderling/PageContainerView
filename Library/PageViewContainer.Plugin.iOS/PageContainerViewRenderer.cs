@@ -32,37 +32,28 @@ namespace Plugin.PCV.iOS
 			}
 		}
 
-		void ChangePage(Page newPageToDisplay)
+		// Displays the Page (or NagivationPage) that is stored in the Content property of the PCV
+		private void DisplayPCVContent(Page pageToDisplay)
 		{
-			if (newPageToDisplay != null)
-			{
-				newPageToDisplay.Parent = Element.GetParentPage();
+			pageToDisplay.Parent = Element.GetParentPage();
 
-				//var pageRenderer = page.GetRenderer(); // old hacky way
-				var pageRenderer = Platform.GetRenderer(newPageToDisplay); // TODO: this is always null. The new page hasn't been rendered yet.
+			//var pageRenderer = page.GetRenderer(); // old hacky way
+			var pageRenderer = Platform.GetRenderer(pageToDisplay); // TODO: this is always null. The new page hasn't been rendered yet.
 
-				UIViewController viewController = null;
-				if (pageRenderer != null && pageRenderer.ViewController != null)
-					viewController = pageRenderer.ViewController;
-				else
-					viewController = newPageToDisplay.CreateViewController();
-
-				var parentPage = Element.GetParentPage();
-				//var renderer = parentPage.GetRenderer(); // old hacky way
-				var parentPageRenderer = Platform.GetRenderer(parentPage);
-
-				Control.ParentViewController = parentPageRenderer.ViewController;
-				Control.ViewController = viewController; // some logic happens here when this gets set
-
-				LayoutSubviews(); // Need to adjust the layout after page change
-			}
+			UIViewController viewController = null;
+			if (pageRenderer != null && pageRenderer.ViewController != null)
+				viewController = pageRenderer.ViewController;
 			else
-			{
-				if (Control != null)
-				{
-					Control.ViewController = null;
-				}
-			}
+				viewController = pageToDisplay.CreateViewController();
+
+			var parentPage = Element.GetParentPage();
+			//var renderer = parentPage.GetRenderer(); // old hacky way
+			var parentPageRenderer = Platform.GetRenderer(parentPage);
+
+			Control.ParentViewController = parentPageRenderer.ViewController;
+			Control.ViewController = viewController; // some logic happens here when this gets set
+
+			LayoutSubviews(); // Need to adjust the layout after page change
 		}
 
 		public override void LayoutSubviews()
@@ -83,7 +74,7 @@ namespace Plugin.PCV.iOS
 				if (Element?.Content != null) // don't attempt to change the page if the PCV.Content property doesn't have a page to display
 				{
 					// We must call this when Element.Content is a NavigationPage otherwise Platform.GetRenderer(parentPage) will return null in ChangePage()
-					Device.BeginInvokeOnMainThread(() => ChangePage(Element.Content));
+					Device.BeginInvokeOnMainThread(() => DisplayPCVContent(Element.Content));
 				}
 			}
 		}
