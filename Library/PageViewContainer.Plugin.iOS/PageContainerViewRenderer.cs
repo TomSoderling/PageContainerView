@@ -27,7 +27,7 @@ namespace Plugin.PCV.iOS
 
 			if (e.NewElement != null)
 			{
-				var viewControllerContainer = new ViewControllerContainer(Bounds);
+				var viewControllerContainer = new ViewControllerContainer();
 				SetNativeControl(viewControllerContainer);
 			}
 		}

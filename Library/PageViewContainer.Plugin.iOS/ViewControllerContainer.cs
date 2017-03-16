@@ -9,7 +9,7 @@ namespace Plugin.PCV.iOS
 {
 	public class ViewControllerContainer : UIView
 	{
-		public ViewControllerContainer(CGRect frame) : base(frame)
+		public ViewControllerContainer()
 		{
 			BackgroundColor = Color.Transparent.ToUIColor();
 		}
