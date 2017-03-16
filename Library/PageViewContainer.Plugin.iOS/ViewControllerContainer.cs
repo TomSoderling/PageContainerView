@@ -14,10 +14,10 @@ namespace Plugin.PCV.iOS
 			BackgroundColor = Color.Transparent.ToUIColor();
 		}
 
-		#region properties
 
 		public UIViewController ParentViewController { get; set; }
 
+		// this prop handles the adding and removing of the ViewController to the Parent, and the View as a subview of this UIView
 		private UIViewController _viewController;
 		public UIViewController ViewController
 		{
@@ -45,12 +45,18 @@ namespace Plugin.PCV.iOS
 			Debug.WriteLine($"vc.v is: {_viewController.View}");
 
 
+			// TODO: it still thinks the Bounds are 924 wide in portrait mode
+			// it's not calculating this correctly after orentation change.  The height is getting updated correctly tho.
+
 			// This is the new ViewController of the new Page to be displayed - give it a parent.
 			ParentViewController.AddChildViewController(_viewController); 
 
 			// add this new View as a nested view of this current UIVew
-			AddSubview(_viewController.View); 
+			AddSubview(_viewController.View);
 
+			Debug.WriteLine(">>> Set _viewController.View.Frame to Bounds.");
+			Debug.WriteLine($"                    Bounds: {Bounds}");
+			Debug.WriteLine($"_viewController.View.Frame: {_viewController.View.Frame}");
 			_viewController.View.Frame = Bounds;
 			_viewController.DidMoveToParentViewController(ParentViewController);
 
@@ -65,27 +71,5 @@ namespace Plugin.PCV.iOS
 				ViewController.RemoveFromParentViewController();
 			}
 		}
-
-		#endregion
-
-		#region lifecycle
-
-		public override void LayoutSubviews()
-		{
-			base.LayoutSubviews();
-
-			//hack to fix sizing of children when changing orientation
-			if (ViewController != null && ViewController.View.Subviews.Length > 0)
-			{
-				foreach (UIView view in ViewController.View.Subviews)
-					view.Frame = Bounds;
-			}
-			//			if (ViewController != null) {
-			//				ViewController.View.Frame = Bounds;
-			//			}
-		}
-
-		#endregion
-
 	}
 }

@@ -53,6 +53,8 @@ namespace Plugin.PCV.iOS
 
 				Control.ParentViewController = parentPageRenderer.ViewController;
 				Control.ViewController = viewController; // some logic happens here when this gets set
+
+				LayoutSubviews(); // Need to adjust the layout after page change
 			}
 			else
 			{
@@ -80,7 +82,8 @@ namespace Plugin.PCV.iOS
 			{
 				if (Element?.Content != null) // don't attempt to change the page if the PCV.Content property doesn't have a page to display
 				{
-					Device.BeginInvokeOnMainThread(() => ChangePage(Element != null ? Element.Content : null));
+					// We must call this when Element.Content is a NavigationPage otherwise Platform.GetRenderer(parentPage) will return null in ChangePage()
+					Device.BeginInvokeOnMainThread(() => ChangePage(Element.Content));
 				}
 			}
 		}
