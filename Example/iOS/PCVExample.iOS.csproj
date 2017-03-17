@@ -126,13 +126,13 @@
       <Project>{3E6EFA97-FAAF-481D-A18F-7E0D651F759B}</Project>
       <Name>PCVExample</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Library\PageViewContainer.Plugin.iOS\PageViewContainer.Plugin.iOS.csproj">
-      <Project>{B47F385B-83FC-4F06-A582-3A92B71E3B56}</Project>
-      <Name>PageViewContainer.Plugin.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Library\PageContainerView.Plugin\PageContainerView.Plugin.csproj">
       <Project>{E6E0B956-C54A-4F81-BFF9-B758EA150599}</Project>
       <Name>PageContainerView.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\PageViewContainer.Plugin.iOS\PageContainerView.Plugin.iOS.csproj">
+      <Project>{B47F385B-83FC-4F06-A582-3A92B71E3B56}</Project>
+      <Name>PageContainerView.Plugin.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

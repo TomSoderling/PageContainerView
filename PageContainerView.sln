@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCVExample.UITests", "Examp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageContainerView.Plugin", "Library\PageContainerView.Plugin\PageContainerView.Plugin.csproj", "{E6E0B956-C54A-4F81-BFF9-B758EA150599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageViewContainer.Plugin.iOS", "Library\PageViewContainer.Plugin.iOS\PageViewContainer.Plugin.iOS.csproj", "{B47F385B-83FC-4F06-A582-3A92B71E3B56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageContainerView.Plugin.iOS", "Library\PageViewContainer.Plugin.iOS\PageContainerView.Plugin.iOS.csproj", "{B47F385B-83FC-4F06-A582-3A92B71E3B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
