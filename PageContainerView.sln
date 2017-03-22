@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageContainerView.Plugin", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageContainerView.Plugin.iOS", "Library\PageViewContainer.Plugin.iOS\PageContainerView.Plugin.iOS.csproj", "{B47F385B-83FC-4F06-A582-3A92B71E3B56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageContainerView.Plugin.Droid", "Library\PageContainerView.Plugin.Droid\PageContainerView.Plugin.Droid.csproj", "{95CD5FB1-AAE6-434B-A131-0F452BA352BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,18 @@ Global
 		{B47F385B-83FC-4F06-A582-3A92B71E3B56}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{B47F385B-83FC-4F06-A582-3A92B71E3B56}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{B47F385B-83FC-4F06-A582-3A92B71E3B56}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|iPhone.Build.0 = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E6EFA97-FAAF-481D-A18F-7E0D651F759B} = {78B2197C-8D21-4AAE-8D7A-F15A1784036D}
@@ -107,5 +121,6 @@ Global
 		{07171678-932F-4BCA-AAC0-5CC6D9E67190} = {78B2197C-8D21-4AAE-8D7A-F15A1784036D}
 		{E6E0B956-C54A-4F81-BFF9-B758EA150599} = {8F41DDF8-4C7C-44FC-8622-C248AFB8266F}
 		{B47F385B-83FC-4F06-A582-3A92B71E3B56} = {8F41DDF8-4C7C-44FC-8622-C248AFB8266F}
+		{95CD5FB1-AAE6-434B-A131-0F452BA352BA} = {8F41DDF8-4C7C-44FC-8622-C248AFB8266F}
 	EndGlobalSection
 EndGlobal
