@@ -36,7 +36,8 @@ How do you get a Page to appear in place of a View?  All the magic happens in a 
 
 ## The Inspiration
 
-Like most interesting ideas, someone else has also thought of it.  The developers at [Twin Technologies](http://twintechs.com) saw the need for something like this and created a brilliant library called [TwinTechsFormsLib](https://github.com/twintechs/TwinTechsFormsLib) to push the boundaries of what Xamarin.Forms was capable of at that time.  This library is a fork of their initial prototype and they deserve most of the credit for anything this library can do.  My contribution was to fix their first version of the View (they called it PageViewContainer) by replacing some of the hacky bits that they had to use at the time, with functionality that Xamarin.Forms now supports, add support for UWP, and extract the parts related to the PageContainerView into a more focussed library.  
+Like most interesting ideas, someone else has also thought of it.  The developers at [Twin Technologies](http://twintechs.com) saw the need for something like this and created a brilliant library called [TwinTechsFormsLib](https://github.com/twintechs/TwinTechsFormsLib) to push the boundaries of what Xamarin.Forms was capable of at that time.  Notice that their readme file doesn't mention the View (they called it PageViewContainer), but this blog post ???? does.  
+This library is a fork of their initial prototype and they deserve most of the credit for anything this library can do.  My contribution was to fix their first version of the View  by replacing some of the hacky bits that they had to use at the time, with functionality that Xamarin.Forms now supports, add support for UWP, and extract the parts related to the PageContainerView into a more focussed library.  
 
 
 ## How To Use This Thing (currently)
@@ -46,9 +47,9 @@ Like most interesting ideas, someone else has also thought of it.  The developer
 ## Please Help
 
 I would really appreciate your feedback, particularly in answering these few questions:  
-1.) Does the description make sense? Do you get the idea?
+1. Does the description make sense? Do you get the idea?
    - I’m already familiar with the concept, so does the description help you grasp the concept?
    - If the concept is clear, does the current name make sense?
-2.) Do you find the concept to be useful or even necessary?  Would you use it?
-3.) Do the directions make sense?
+2. Do you find the concept to be useful or even necessary?  Would you use it?
+3. Do the directions make sense?
    - What barriers are there for you to try it out? How can I lower those?
