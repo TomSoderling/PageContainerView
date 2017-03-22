@@ -13,8 +13,9 @@ namespace PCVExample
 		{
 			InitializeComponent();
 
+			// add some space above the tabs so its flush with the navigation bar header
 			// this 64px margin is a hack for iOS for now - it doesn't look right on iPhone in landscape orientation
-			tabStack.Margin = new Thickness(0, 64, 0, 0);
+			//tabStack.Margin = new Thickness(0, 64, 0, 0);
 
 			CreateNavPages();
 		}
