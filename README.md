@@ -30,7 +30,8 @@ What if we could just drop a NavigationPage on the right side and be happily on 
 
 ## An Answer
 
-This library is built around that single concept.  It introduces a new type of View (control) called PageContainerView.  It's a View that acts as a container for a Page, and allows you to place a ContentPage or NavigationPage anywhere in the app that you can place a View.  How do you get a Page to appear in place of a View?  Through the use of a Custom Renderer for iOS, Android, and UWP (work in progress).
+This library is built around that single concept.  It introduces a new type of View (control) called PageContainerView.  It's a View that acts as a container for a Page, and allows you to place a ContentPage or NavigationPage anywhere in the app that you can place a View.  
+How do you get a Page to appear in place of a View?  All the magic happens in a custom renderer for each platform: iOS, Android, and UWP (work in progress).
 
 
 ## The Inspiration
