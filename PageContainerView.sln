@@ -123,4 +123,11 @@ Global
 		{B47F385B-83FC-4F06-A582-3A92B71E3B56} = {8F41DDF8-4C7C-44FC-8622-C248AFB8266F}
 		{95CD5FB1-AAE6-434B-A131-0F452BA352BA} = {8F41DDF8-4C7C-44FC-8622-C248AFB8266F}
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 80
+		$1.scope = text/plain
+		$0.StandardHeader = $2
+	EndGlobalSection
 EndGlobal
