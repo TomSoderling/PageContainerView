@@ -20,7 +20,7 @@
 			  	</BoxView.GestureRecognizers>
 			</BoxView>
 
-			<BoxView x:Name="tabC" HeightRequest="100" BackgroundColor="Pink">
+			<BoxView x:Name="tabC" HeightRequest="100" BackgroundColor="Red">
 				<BoxView.GestureRecognizers>
         			<TapGestureRecognizer Tapped="OnTabCTapGestureRecognizerTapped" />
 			  	</BoxView.GestureRecognizers>

@@ -28,7 +28,7 @@ namespace PCVExample
 			var b1 = BuildDynamicChildPage("B", 1, Color.Yellow);
 			navPageB = new NavigationPage(b1);
 
-			var c1 = BuildDynamicChildPage("C", 1, Color.Pink);
+			var c1 = BuildDynamicChildPage("C", 1, Color.Red);
 			navPageC = new NavigationPage(c1);
 
 
