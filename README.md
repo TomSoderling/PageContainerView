@@ -18,7 +18,8 @@ Here is what the PowerPoint and Excel apps look like:
 </table>
 
 Yes, I know that tab navigation on the left side is non-standard for iOS or Android, but what if you have a good reason for it?  Seems reasonable that we could make this work, right?  Well, wrong (we found out).  
-In Xamarin.Forms, the UI design is actually an architectural decision.  In order to achive what I consider to be a pretty basic app layout we had to take a "composite approach", where the entire app was made up of ContentViews (as opposed to ContentPages as one usually would use).  There was only 1 single ContentPage in the entire app, and it housed the nested ContentView layout.  The tabs on the left were inside a ContentView, and the entire right area was also a ContentView that would get swapped out with other ContentViews that contained our UI when a tab was tapped, or when we needed to navigation further down the path on a particular tab.  
+
+In Xamarin.Forms, the UI design is actually an architectural decision.  In order to achive what I consider to be a pretty basic app layout we had to take a "composite approach", where the entire app was made up of ContentViews (as opposed to ContentPages as one usually would use).  So there was only 1 ContentPage in the entire app, and it housed the nested ContentView layout.  The tabs on the left were inside a ContentView, and the entire right area was also a ContentView that would get swapped out with other ContentViews that contained our UI when a tab was tapped, or when we needed to navigation further down the path on a particular tab.  
 
 While it helped us achieve the look we wanted, this composite approach ended up sucking for us for several reasons. These are some that I can remember:
  - we missed using NavigationPages and having the navigation stack managed behind the scenes
