@@ -27,10 +27,10 @@ While it helped us achieve the look we wanted, this composite approach ended up 
  - the composite approach requred a LOT of nesting of ContentViews resulting in complexity and a performance hit in some cases
  - all the business logic lived in the ContentViews, so instead of being reusable custom controls like you'd normal have, we had tightly coupled ContentViews that represented a single "page".
  
-What if we could just drop a NavigationPage on the right side and be happily on our way?  Better yet, what if we could simply place a Page anywhere you wanted in a Xamarin.Forms app, just like we do with Views?  
-
-
+ 
 ## An Answer
+
+What if we could just drop a NavigationPage on the right side and be happily on our way?  Better yet, what if we could simply place a Page anywhere you wanted in a Xamarin.Forms app, just like we do with Views?  
 
 This library is built around that single concept.  It introduces a new type of View (control) called PageContainerView.  It's a View that acts as a container for a Page, and allows you to place a ContentPage or NavigationPage anywhere in the app that you can place a View.  
 How do you get a Page to appear in place of a View?  All the magic happens in a custom renderer for each platform: iOS, Android, and UWP (work in progress).
