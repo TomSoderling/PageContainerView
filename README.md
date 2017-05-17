@@ -2,7 +2,9 @@
 
 [Page](https://developer.xamarin.com/api/type/Xamarin.Forms.Page) is probably one of the most foundational and essential Views (aka controls) in all of Xamarin.Forms.  Being a top level UI element, nearly everything is built on top of a derived class of Page. By definition, Page is a VisualElement that occupies the entire screen, and that use certainly makes sense.  
 
-The trouble comes when you want to create a more "interesting" main app layout or use a different navigation pattern.  This need came to light as we tried to make an app that looks like one of the Microsoft Office apps for iOS.  They feature a set of navigation tabs on the left side, with the main content on the right taking up most of the screen.  Notice, this is different than a master-detail layout. Here is what the PowerPoint and Excel apps look like:
+The trouble comes when you want to create a more "interesting" main app layout or use a different navigation pattern.  This need came to light as we tried to make an app that looks like one of the Microsoft Office apps for iOS.  They feature a set of navigation tabs on the left side, with the main content on the right taking up most of the screen.  Notice, this is different than a master-detail layout.  
+
+Here is what the PowerPoint and Excel apps look like:
 
 <table>
  <tr>
