@@ -49,7 +49,7 @@ This library is a fork of their initial prototype and they deserve most of the c
 I would really appreciate your feedback, particularly in answering these few questions:  
 1. Does the description make sense? Do you get the idea?
    - I’m already familiar with the concept, so does the description help you grasp the concept?
-   - If the concept is clear, does the current name make sense?
-2. Do you find the concept to be useful or even necessary?  Would you use it?
+   - Does the current name make sense?
+2. Do you find this View to be useful or even necessary?  Would you use it?
 3. Do the directions make sense?
    - What barriers are there for you to try it out? How can I lower those?
