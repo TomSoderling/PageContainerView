@@ -43,6 +43,10 @@ This library is a fork of their initial prototype and they deserve most of the c
 ## How To Use This Thing (currently)
 
 
+## Known Limitations
+
+- On iOS, after rotating the device from portrait to landscape, then back to portrait, you'll notice that the right side of the Page gets chopped off.  It's not correcting the width of the page after rotation.
+
 
 ## Please Help
 
