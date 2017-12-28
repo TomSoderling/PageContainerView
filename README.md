@@ -1,4 +1,4 @@
-## The Problem
+## The Challenge
 
 [Page](https://developer.xamarin.com/api/type/Xamarin.Forms.Page) is probably one of the most foundational and essential Views (aka controls) in all of Xamarin.Forms.  Being a top level UI element, nearly everything is built on top of a derived class of Page. By definition, Page is a VisualElement that occupies the entire screen, and that use certainly makes sense.  
 
@@ -17,21 +17,21 @@ Here is what the PowerPoint and Excel apps look like:
  </tr>
 </table>
 
-Yes, I know that tab navigation on the left side is non-standard for iOS or Android, but what if you have a good reason for it?  Seems reasonable that we could make this work, right?  Well, wrong (we found out).  
+Yes, I know that tab navigation on the left side is non-standard for iOS or Android, but what if you have a good reason for it?  Seems reasonable that we could make this work, right?  Well... wrong (we found out).  
 
 In Xamarin.Forms, the UI design is actually an architectural decision.  In order to achive what I consider to be a pretty basic app layout we had to take a "composite approach", where the entire app was made up of ContentViews (as opposed to ContentPages as one usually would use).  So there was only 1 ContentPage in the entire app, and it housed the nested ContentView layout.  The tabs on the left were inside a ContentView, and the entire right area was also a ContentView that would get swapped out with other ContentViews that contained our UI when a tab was tapped, or when we needed to navigation further down the path on a particular tab.  
 
 While it helped us achieve the look we wanted, this composite approach ended up sucking for us for several reasons. These are some that I can remember:
- - we missed using NavigationPages and having the navigation stack managed behind the scenes
- - we really missed all the lifecycle events that ContentPage provides to override: OnAppearing, OnPropertyChanged, OnBackButtonPressed, etc.
- - there were no page transitions when navigating anywhere, which gave the app a weird hybrid-app feel
- - the composite approach requred a LOT of nesting of ContentViews resulting in complexity and a performance hit in some cases
- - all the business logic lived in the ContentViews, so instead of being reusable custom controls like you'd normal have, we had tightly coupled ContentViews that represented a single "page".
+ - We missed using NavigationPages and having the navigation stack managed behind the scenes
+ - We really missed all the lifecycle events that ContentPage provides to override: OnAppearing, OnPropertyChanged, OnBackButtonPressed, etc.
+ - There were no page transitions when navigating anywhere, which gave the app a weird hybrid-app feel
+ - The composite approach requred a LOT of nesting of ContentViews resulting in complexity and a performance hit in some cases
+ - All the business logic lived in the ContentViews, so instead of being reusable custom controls like you'd normal have, we had tightly coupled ContentViews that represented a single "page". Unit testing nightmare hellscape.
  
  
 ## An Answer
 
-What if we could just drop a NavigationPage on the right side and be happily on our way?  Better yet, what if we could simply place a Page anywhere you wanted in a Xamarin.Forms app, just like we do with Views?  
+What if we could just drop a NavigationPage on the right side of the screen and be happily on our way?  Better yet, what if we could simply place a Page **anywhere** you wanted in a Xamarin.Forms app, just like we do with Views?  
 
 This library is built around that single concept.  It introduces a new type of View (control) called PageContainerView.  
 
